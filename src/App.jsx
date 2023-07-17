@@ -13,6 +13,7 @@ import { api } from './utils/api';
 function App() {
   const [theme, setTheme] = useState('light');
   const [search, setSearch] = useState('');
+  const [region, setRegion] = useState('');
   const [countries, setCountries] = useState([]);
 
   const countriesInfo = countries.map((country) => {
@@ -51,7 +52,14 @@ function App() {
           <Route
             path="/"
             element={
-              <Home countries={countries} countriesInfo={countriesInfo} />
+              <Home
+                countries={countries}
+                countriesInfo={countriesInfo}
+                region={region}
+                setRegion={setRegion}
+                search={search}
+                setSearch={setSearch}
+              />
             }
           />
           <Route path="/country/:name" element={<Details />} />

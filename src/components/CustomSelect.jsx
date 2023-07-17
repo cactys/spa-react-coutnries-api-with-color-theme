@@ -14,11 +14,11 @@ const CustomSelect = styled(Select).attrs({
       height: '50px',
       border: 'none',
     }),
-    option: (provided, state) => ({
+    option: (provided, { isFocused }) => ({
       ...provided,
       cursor: 'pointer',
       color: 'var(--colors-text)',
-      backgroundColor: state.isSelected
+      backgroundColor: isFocused
         ? 'var(--colors-bg)'
         : 'var(--colors-ui-base)',
     }),

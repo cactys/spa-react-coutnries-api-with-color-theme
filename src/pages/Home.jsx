@@ -16,10 +16,22 @@ const CardLink = styled(Link)`
   }
 `;
 
-const Home = ({ countries, countriesInfo }) => {
+const Home = ({
+  countries,
+  countriesInfo,
+  search,
+  setSearch,
+  region,
+  setRegion,
+}) => {
   return (
     <>
-      <Controls />
+      <Controls
+        search={search}
+        setSearch={setSearch}
+        region={region}
+        setRegion={setRegion}
+      />
       <CardList>
         {countriesInfo.map((country) => (
           <CardLink key={country.name} to={`/country/${country.name}`}>
