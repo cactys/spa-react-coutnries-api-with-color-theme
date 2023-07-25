@@ -15,30 +15,38 @@ function App() {
   const [search, setSearch] = useState('');
   const [region, setRegion] = useState('');
   const [countries, setCountries] = useState([]);
+  const [filteredCountries, setFilteredCountries] = useState(countries);
 
-  const countriesInfo = countries.map((country) => {
-    return {
-      img: country.flags.png,
-      name: country.name.official,
-      info: [
-        {
-          title: 'Population',
-          description: country.population.toLocaleString(),
-        },
-        { title: 'Region', description: country.region },
-        { title: 'Capital', description: country.capital },
-      ],
-    };
-  });
+  const handleSearch = (search, region) => {
+    let data = [...countries];
+
+    if (region) {
+      data = data.filter((country) => country.region.includes(region));
+    }
+
+    if (search) {
+      data = data.filter((country) =>
+        country.name.official.toLowerCase().includes(search.toLowerCase())
+      );
+    }
+
+    setFilteredCountries(data);
+  };
 
   useEffect(() => {
-    api
-      .getCountries()
-      .then((res) => {
-        if (res) setCountries(res);
-      })
-      .catch((err) => console.error(err));
+    if (!countries.length) {
+      api
+        .getCountries()
+        .then((res) => {
+          if (res) setCountries(res);
+        })
+        .catch((err) => console.error(err));
+    }
   }, []);
+
+  useEffect(() => {
+    handleSearch();
+  }, [countries]);
 
   useEffect(() => {
     document.body.setAttribute('data-theme', theme);
@@ -53,8 +61,9 @@ function App() {
             path="/"
             element={
               <Home
-                countries={countries}
-                countriesInfo={countriesInfo}
+                onSearch={handleSearch}
+                countries={filteredCountries}
+                setCountries={setCountries}
                 region={region}
                 setRegion={setRegion}
                 search={search}

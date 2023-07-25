@@ -4,6 +4,7 @@ import { Search } from './Search';
 import { CustomSelect } from './CustomSelect';
 
 import { options } from '../utils/constants';
+import { useEffect } from 'react';
 
 const Wrapper = styled.div`
   display: flex;
@@ -18,6 +19,11 @@ const Wrapper = styled.div`
 `;
 
 const Controls = ({ search, setSearch, region, setRegion, onSearch }) => {
+  useEffect(() => {
+    const regionValue = region?.value || '';
+    onSearch(search, regionValue);
+  }, [search, region]);
+
   return (
     <Wrapper>
       <Search search={search} setSearch={setSearch} />

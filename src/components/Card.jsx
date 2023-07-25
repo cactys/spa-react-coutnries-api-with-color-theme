@@ -44,8 +44,7 @@ const CardListItem = styled.li`
   }
 `;
 
-const Card = ({ ...country }) => {
-  const { img, name, info } = country;
+const Card = ({ img, name, info = [] }) => {
   return (
     <Wrapper>
       <CardImage src={img} alt={name} />

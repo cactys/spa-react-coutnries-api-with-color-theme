@@ -5,6 +5,8 @@ import { styled } from 'styled-components';
 import { Card } from '../components/Card';
 import { CardList } from '../components/CardList';
 import { Controls } from '../components/Controls';
+import { useEffect } from 'react';
+import { api } from '../utils/api';
 
 const CardLink = styled(Link)`
   color: var(--colors-text);
@@ -18,11 +20,12 @@ const CardLink = styled(Link)`
 
 const Home = ({
   countries,
-  countriesInfo,
+  setCountries,
   search,
   setSearch,
   region,
   setRegion,
+  onSearch,
 }) => {
   return (
     <>
@@ -31,13 +34,31 @@ const Home = ({
         setSearch={setSearch}
         region={region}
         setRegion={setRegion}
+        onSearch={onSearch}
       />
       <CardList>
-        {countriesInfo.map((country) => (
-          <CardLink key={country.name} to={`/country/${country.name}`}>
-            <Card {...country} />
-          </CardLink>
-        ))}
+        {countries?.map((country) => {
+          const countriesInfo = {
+            img: country.flags.png,
+            name: country.name.official,
+            info: [
+              {
+                title: 'Population',
+                description: country.population.toLocaleString(),
+              },
+              { title: 'Region', description: country.region },
+              { title: 'Capital', description: country.capital },
+            ],
+          };
+          return (
+            <CardLink
+              key={country.name.official}
+              to={`/country/${country.name.official}`}
+            >
+              <Card {...countriesInfo} />
+            </CardLink>
+          );
+        })}
       </CardList>
     </>
   );
