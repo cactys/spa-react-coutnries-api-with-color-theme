@@ -71,7 +71,10 @@ function App() {
               />
             }
           />
-          <Route path="/country/:name" element={<Details />} />
+          <Route
+            path="/country/:name"
+            element={<Details />}
+          />
           <Route path='*"' element={<PageNotFound />} />
         </Routes>
       </Main>

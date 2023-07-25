@@ -1,4 +1,4 @@
-import { ALL_COUNTRIES } from './constants';
+import { ALL_COUNTRIES, filterByCode, searchByCountry } from './constants';
 
 class Api {
   constructor({ baseUrl, headers }) {
@@ -14,6 +14,20 @@ class Api {
 
   getCountries() {
     return fetch(this._baseUrl, {
+      method: 'GET',
+      headers: this._headers,
+    }).then(this._checkingResponse);
+  }
+
+  getCountryInfo(name) {
+    return fetch(searchByCountry(name), {
+      method: 'GET',
+      headers: this._headers,
+    }).then(this._checkingResponse);
+  }
+
+  getCountryFilterByCode(borders) {
+    return fetch(filterByCode(borders), {
       method: 'GET',
       headers: this._headers,
     }).then(this._checkingResponse);
