@@ -6,7 +6,7 @@ const ALL_COUNTRIES =
 const searchByCountry = (name) => BASE_URL + '/name/' + name;
 
 const filterByCode = (codes) =>
-  BASE_URL + '/alpha?codes=' + codes.join('');
+  BASE_URL + '/alpha?codes=' + codes.join(',');
 
 const options = [
   { value: 'Africa', label: 'Africa' },
