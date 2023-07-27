@@ -18,13 +18,13 @@
   - Media Queries
 - ![Static Badge](<https://img.shields.io/badge/styled-components?style=for-the-badge&logo=styled-components&logoColor=white&color=rgb(85%2C%2085%2C%2085)>)
 - ![JavaScript](https://img.shields.io/badge/javascript-%23323330.svg?style=for-the-badge&logo=javascript&logoColor=%23F7DF1E)
-
-<details><summary><kpd>В работе</kpd></summary>
-
 - ![React](https://img.shields.io/badge/react-%2320232a.svg?style=for-the-badge&logo=react&logoColor=%2361DAFB)
   - Create React App
   - Портирование разметки в JSX
   - Функциональные компоненты
+
+<details><summary><kpd>В работе</kpd></summary>
+
 - ![Redux](https://img.shields.io/badge/redux-%23593d88.svg?style=for-the-badge&logo=redux&logoColor=white)
   - Slice
   </details>
