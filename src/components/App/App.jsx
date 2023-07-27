@@ -41,8 +41,7 @@ const App = () => {
         })
         .catch((err) => console.error(err));
     }
-    // eslint-disable-next-line
-  }, []);
+  }, [countries]);
 
   useEffect(() => {
     handleSearch();
