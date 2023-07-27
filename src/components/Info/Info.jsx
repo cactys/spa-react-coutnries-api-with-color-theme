@@ -70,13 +70,13 @@ export const Info = ({
               ))}
             </ListItem>
             <ListItem>
-              <b>Currency:</b>{' '}
+              <b>Currencies:</b>{' '}
               {Object.keys(currencies).map((key) => {
                 return <span key={key}>{key}</span>;
               })}
             </ListItem>
             <ListItem>
-              <b>Top Level Domain:</b>{' '}
+              <b>Languages:</b>{' '}
               {Object.keys(languages).map((key) => {
                 return <span key={key}>{languages[key]}</span>;
               })}

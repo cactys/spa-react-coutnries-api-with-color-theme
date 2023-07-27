@@ -31,7 +31,7 @@ const Details = () => {
   return (
     <>
       <Button onClick={goBack}>
-        <BiArrowBack size={32} />
+        <BiArrowBack size={24} /> Back
       </Button>
       {info && <Info {...info} />}
     </>

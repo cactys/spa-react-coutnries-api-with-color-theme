@@ -3,7 +3,7 @@ import styled from 'styled-components';
 export const Button = styled.button.attrs(({ $alt, $disabled }) => ({
   style: {
     backgroundColor: $alt ? 'var(--colors-ui-button)' : 'var(--colors-ui-base)',
-    padding: $alt ? '1rem' : '0 1rem',
+    padding: $alt ? '1rem' : '0.2rem 1rem',
     disabled: $disabled ? true : false,
     cursor: $disabled ? 'default' : 'pointer',
   },
