@@ -1,4 +1,4 @@
-### [gh-pages](https://cactys.github.io/spa-react-coutnries-api-with-color-theme/)
+### [DEMO](https://spa-react-coutnries-api-with-color-theme.vercel.app/)
 
 <details><summary><kpd> Frontend Mentor - REST Countries API with color theme switcher </kpd></summary><p align="center"><kpd> <img width="768" height="auto" align="center" alt="desktop preview" src="./design/desktop-preview.jpg"></img></kpd></p></details>
 
