@@ -1,6 +1,6 @@
 import { styled } from 'styled-components';
 
-const Wrapper = styled.article`
+export const Wrapper = styled.article`
   min-height: 320px;
   height: 100%;
   border-radius: var(--radii);
@@ -9,7 +9,7 @@ const Wrapper = styled.article`
   overflow: hidden;
 `;
 
-const CardImage = styled.img`
+export const CardImage = styled.img`
   display: block;
   width: 100%;
   height: 150px;
@@ -18,23 +18,23 @@ const CardImage = styled.img`
   box-shadow: var(--shadow);
 `;
 
-const CardBody = styled.div`
+export const CardBody = styled.div`
   padding: 1rem 1.5rem 2rem;
 `;
 
-const CardTitle = styled.h3`
+export const CardTitle = styled.h3`
   margin: 0;
   font-size: var(--fs-md);
   font-weight: var(--fw-bold);
 `;
 
-const CardList = styled.ul`
+export const CardList = styled.ul`
   list-style: none;
   margin: 0;
   padding: 1rem 0;
 `;
 
-const CardListItem = styled.li`
+export const CardListItem = styled.li`
   font-size: var(--fs-sm);
   line-height: 1.5;
   font-weight: var(--fw-light);
@@ -43,23 +43,3 @@ const CardListItem = styled.li`
     font-weight: var(--fw-normal);
   }
 `;
-
-const Card = ({ img, name, info = [] }) => {
-  return (
-    <Wrapper>
-      <CardImage src={img} alt={name} />
-      <CardBody>
-        <CardTitle>{name}</CardTitle>
-        <CardList>
-          {info.map((el) => (
-            <CardListItem key={el.title}>
-              <span>{el.title}</span> {el.description}
-            </CardListItem>
-          ))}
-        </CardList>
-      </CardBody>
-    </Wrapper>
-  );
-};
-
-export { Card };

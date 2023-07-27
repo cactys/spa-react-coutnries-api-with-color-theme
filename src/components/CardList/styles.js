@@ -1,6 +1,8 @@
+import { Link } from 'react-router-dom';
 import { styled } from 'styled-components';
 
-const Wrapper = styled.section`
+
+export const Wrapper = styled.section`
   width: 100%;
   padding: 2rem 0;
 
@@ -21,8 +23,13 @@ const Wrapper = styled.section`
   }
 `;
 
-const CardList = ({ children }) => {
-  return <Wrapper>{children}</Wrapper>;
-};
+export const CardLink = styled(Link)`
+  color: var(--colors-text);
+  text-decoration: none;
+  transition: var(--op-transition);
 
-export { CardList };
+  &:hover {
+    opacity: var(--opacity);
+  }
+`;
+

@@ -1,16 +1,15 @@
 import { useState, useEffect } from 'react';
 import { Route, Routes } from 'react-router-dom';
 
-import { Header } from './components/Header';
-import { Main } from './components/Main';
+import { api } from '../../utils/api';
+import { Header } from '../Header/Header';
+import { Main } from '../Main/Main';
 
-import { Home } from './pages/Home';
-import { Details } from './pages/Details';
-import { PageNotFound } from './pages/PageNotFound';
+import { Details } from '../../pages/Details/Details';
+import { HomePage } from '../../pages/HomePage/HomePage';
+import { PageNotFound } from '../../pages/PageNotFound/PageNotFound';
 
-import { api } from './utils/api';
-
-function App() {
+const App = () => {
   const [theme, setTheme] = useState('light');
   const [search, setSearch] = useState('');
   const [region, setRegion] = useState('');
@@ -42,10 +41,12 @@ function App() {
         })
         .catch((err) => console.error(err));
     }
+    // eslint-disable-next-line
   }, []);
 
   useEffect(() => {
     handleSearch();
+    // eslint-disable-next-line
   }, [countries]);
 
   useEffect(() => {
@@ -60,7 +61,7 @@ function App() {
           <Route
             path="/"
             element={
-              <Home
+              <HomePage
                 onSearch={handleSearch}
                 countries={filteredCountries}
                 setCountries={setCountries}
@@ -71,15 +72,12 @@ function App() {
               />
             }
           />
-          <Route
-            path="/country/:name"
-            element={<Details />}
-          />
+          <Route path="/country/:name" element={<Details />} />
           <Route path='*"' element={<PageNotFound />} />
         </Routes>
       </Main>
     </>
   );
-}
+};
 
 export { App };

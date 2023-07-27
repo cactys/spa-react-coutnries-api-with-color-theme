@@ -13,14 +13,21 @@ const CustomSelect = styled(Select).attrs({
       boxShadow: 'var(--shadow)',
       height: '50px',
       border: 'none',
+      cursor: 'pointer',
+      transition: 'var(--op-transition)',
+      ':hover': {
+        opacity: 'var(--opacity)',
+      },
     }),
     option: (provided, { isFocused }) => ({
       ...provided,
       cursor: 'pointer',
       color: 'var(--colors-text)',
-      backgroundColor: isFocused
-        ? 'var(--colors-bg)'
-        : 'var(--colors-ui-base)',
+      backgroundColor: isFocused ? 'var(--colors-bg)' : 'var(--colors-ui-base)',
+      transition: 'var(--op-transition)',
+      ':hover': {
+        opacity: 'var(--opacity)',
+      },
     }),
   },
 })`

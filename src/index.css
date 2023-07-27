@@ -16,6 +16,7 @@
 
   /* Other */
   --radii: 0.5rem;
+  --transition: all 0.8s ease-in;
   --op-transition: opacity 0.4s ease-in;
   --opacity: 0.7;
 }
@@ -25,6 +26,7 @@ body[data-theme='dark'] {
   --colors-bg: hsl(207, 26%, 17%);
   --colors-ui-base: hsl(209, 23%, 22%);
   --colors-ui-alt: hsl(0, 0%, 52%);
+  --colors-ui-button: rgba(124, 124, 124, 0.3);
 
   --colors-red: #d8093a;
 
@@ -36,6 +38,7 @@ body[data-theme='light'] {
   --colors-bg: hsl(0, 0%, 98%);
   --colors-ui-base: hsl(0, 0%, 100%);
   --colors-ui-alt: hsl(0, 0%, 52%);
+  --colors-ui-button: rgba(124, 124, 124, 0.3);
 
   --colors-red: #e92d59;
 

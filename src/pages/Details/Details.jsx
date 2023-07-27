@@ -1,10 +1,12 @@
 import { useEffect, useState } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
 
-import { Button } from '../components/Button';
 import { BiArrowBack } from 'react-icons/bi';
-import { api } from '../utils/api';
-import { Info } from '../components/Info';
+
+import { api } from '../../utils/api';
+import { Button } from '../../UI/Button/styles';
+
+import { Info } from '../../components/Info/Info';
 
 const Details = () => {
   const [info, setInfo] = useState([]);

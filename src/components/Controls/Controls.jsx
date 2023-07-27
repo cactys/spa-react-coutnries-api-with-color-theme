@@ -1,27 +1,17 @@
-import { styled } from 'styled-components';
-
-import { Search } from './Search';
-import { CustomSelect } from './CustomSelect';
-
-import { options } from '../utils/constants';
 import { useEffect } from 'react';
 
-const Wrapper = styled.div`
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
+import { options } from '../../utils/constants';
+import { Wrapper } from './styles';
 
-  @media (min-width: 767px) {
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-  }
-`;
+import { Search } from '../../UI/Search/Search';
+import { CustomSelect } from '../../UI/CustomSelect/styles';
+
 
 const Controls = ({ search, setSearch, region, setRegion, onSearch }) => {
   useEffect(() => {
     const regionValue = region?.value || '';
     onSearch(search, regionValue);
+    // eslint-disable-next-line
   }, [search, region]);
 
   return (

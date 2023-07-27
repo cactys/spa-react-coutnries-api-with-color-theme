@@ -1,7 +1,6 @@
-import { styled } from 'styled-components';
-import { BiSearchAlt } from 'react-icons/bi';
+import { styled } from "styled-components";
 
-const InputContainer = styled.label`
+export const InputContainer = styled.label`
   background-color: var(--colors-ui-base);
   padding: 0.5rem 0.75rem;
   display: flex;
@@ -17,7 +16,7 @@ const InputContainer = styled.label`
   }
 `;
 
-const Input = styled.input.attrs({
+export const Input = styled.input.attrs({
   type: 'search',
   placeholder: 'Search for a country...',
 })`
@@ -29,18 +28,3 @@ const Input = styled.input.attrs({
   color: var(--colors-text);
   width: 100%;
 `;
-
-const Search = ({ search, setSearch }) => {
-  const handleSearch = (e) => {
-    const { value } = e.target;
-    setSearch(value);
-  };
-  return (
-    <InputContainer>
-      <BiSearchAlt size={32} />
-      <Input onChange={handleSearch} value={search} />
-    </InputContainer>
-  );
-};
-
-export { Search };
